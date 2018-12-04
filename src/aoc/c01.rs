@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-pub fn run(input: &[String], part: u8) -> String {
+pub fn run(input: &[&str], part: u8) -> String {
     let encoded: Vec<_> = input.iter().map(|i| i.parse::<i32>().unwrap()).collect();
     match part {
         1 => c_01_1(&encoded),
