@@ -20,5 +20,12 @@ fn main() {
         .map(|v| v.to_string())
         .collect();
 
-    println!("{}", aoc::run(&(lines.iter().map(|s| s.as_str()).collect::<Vec<&str>>() ), challenge, part));
+    println!(
+        "{}",
+        aoc::run(
+            &(lines.iter().map(|s| s.as_str()).collect::<Vec<&str>>()),
+            challenge,
+            part
+        )
+    );
 }

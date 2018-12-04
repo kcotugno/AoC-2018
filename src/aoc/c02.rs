@@ -15,21 +15,21 @@ fn c_02_1(input: &[&str]) -> i32 {
         let mut m = HashMap::new();
 
         for c in val.chars() {
-            let new_val =match m.get(&c) {
-                Some(v) => *v+1,
-                None => 1
+            let new_val = match m.get(&c) {
+                Some(v) => *v + 1,
+                None => 1,
             };
 
-            m.insert(c.clone(), new_val);
+            m.insert(c, new_val);
         }
 
-        three += match m.iter().filter(|(_, v)| **v == 3).next() {
+        three += match m.iter().find(|(_, v)| **v == 3) {
             Some(_) => 1,
-            None => 0
+            None => 0,
         };
-        two += match m.iter().filter(|(_, v)| **v == 2).next() {
+        two += match m.iter().find(|(_, v)| **v == 2) {
             Some(_) => 1,
-            None => 0
+            None => 0,
         };
     }
 
@@ -42,16 +42,13 @@ fn c_02_2(input: &[&str]) -> String {
             let mut diff = 0;
             let mut val2char = val2.chars();
             for val1char in val1.chars() {
-                match val2char.next() {
-                    Some(v) => {
-                        if v != val1char {
-                            diff += 1;
-                            if diff > 1 {
-                                break;
-                            }
+                if let Some(v) = val2char.next() {
+                    if v != val1char {
+                        diff += 1;
+                        if diff > 1 {
+                            break;
                         }
-                    },
-                    None => ()
+                    }
                 }
             }
 

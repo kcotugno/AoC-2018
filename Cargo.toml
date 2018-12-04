@@ -1,10 +1,10 @@
 [package]
-name = "AoC-2018"
+name = "aoc-2018"
 version = "0.1.0"
 authors = ["Kevin Cotugno <kevin@kevincotugno.com>"]
 
 [[bin]]
-name = "AoC-2018"
+name = "aoc-2018"
 path = "src/bin/main.rs"
 
 [lib]
